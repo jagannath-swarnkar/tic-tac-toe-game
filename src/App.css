@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+table, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  height:100px;
+  
+}
+td{
+  width:100px;
+  background-color: lightgreen;
+  text-align: center;
+}
+#userwinner{
+  display: none;
+}
+#userguide{
+  display: block;
+}
