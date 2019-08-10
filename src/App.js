@@ -13,6 +13,7 @@ class App extends Component{
     }
     this.game = this.game.bind(this);
     this.winner = this.winner.bind(this);
+    var winnerInstance = this.state.winner;
   }
   winner(){
     var list=[["0","1","2"],["3","4","5"],["6","7","8"],["0","3","6"],["1","4","7"],["2","5","8"],["0","4","8"],["2","4","6"]];
@@ -69,12 +70,14 @@ class App extends Component{
       this.winner();
     }
   }
+  Restart(){
+    document.location.reload()
+  }
   render(){
 
     return(
       <div className="structure">
         <h2 id="userguide">Next Player : {this.state.user}</h2>
-        <h2 id="userwinner">Winner : {this.state.winner}</h2>
         <table>
           <tr>
             <td id="0" onClick={this.game}>{this.state.item[0]}</td>
@@ -92,6 +95,8 @@ class App extends Component{
             <td id="8" onClick={this.game}>{this.state.item[8]}</td>
           </tr>
         </table>
+        <h2><button onClick={this.Restart}>Restart</button></h2>
+        <h2 id="userwinner">Congratulation ! <br/><span>Your Winner : {this.state.winner}</span></h2>
       </div>
     )
   }
